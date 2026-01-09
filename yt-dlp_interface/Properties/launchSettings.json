@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "yt-dlp_interface": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\sofis\\Desktop\\programming\\csharp\\Side\\yt-dlp_interface\\yt-dlp_interface"
+    }
+  }
+}
