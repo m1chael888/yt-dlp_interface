@@ -20,7 +20,10 @@ namespace yt_dlp_interface.Views
 
         public void Display()
         {
-            while (true)
+            Console.Clear();
+
+            bool done = false;
+            while (!done)
             {
                 var input = AnsiConsole.Prompt(
                     new SelectionPrompt<MainMenuOption>()
@@ -33,6 +36,7 @@ namespace yt_dlp_interface.Views
                 {
                     case MainMenuOption.Download:
                         _downloadsController.CallDownloadsView();
+                        done = true;
                         break;
                     case MainMenuOption.Exit:
                         AnsiConsole.MarkupLine("[green]Goodbye;;[/]");

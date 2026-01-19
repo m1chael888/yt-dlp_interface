@@ -1,11 +1,12 @@
 ﻿using yt_dlp_interface.Views;
+using yt_dlp_interface.Models;
 
 namespace yt_dlp_interface.Controllers
 {
     public interface IDownloadsController
     {
         void CallDownloadsView();
-        void CallDownloadsService();
+        void CallDownloadsService(DownloadDto Dto);
     }
 
     public class DownloadsController : IDownloadsController
@@ -22,9 +23,9 @@ namespace yt_dlp_interface.Controllers
             _downloadsView.GetVideoDetails();
         }
 
-        public void CallDownloadsService()
+        public void CallDownloadsService(DownloadDto Dto)
         {
-
+            
         }
     }
 }
