@@ -1,9 +1,18 @@
-﻿namespace yt_dlp_interface.Views
+﻿using Spectre.Console;
+
+namespace yt_dlp_interface.Views
 {
-    internal interface IDownloadsView;
-
-    internal class DownloadsView : IDownloadsView
+    public interface IDownloadsView
     {
+        void GetVideoDetails();
+    }
 
+    public class DownloadsView : IDownloadsView
+    {
+        public void GetVideoDetails()
+        {
+            AnsiConsole.MarkupLine("this is where the user will specify the download ig");
+            Console.ReadKey();
+        }
     }
 }

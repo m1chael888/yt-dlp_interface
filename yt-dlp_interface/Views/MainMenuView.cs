@@ -32,7 +32,7 @@ namespace yt_dlp_interface.Views
                 switch (input)
                 {
                     case MainMenuOption.Download:
-
+                        _downloadsController.CallDownloadsView();
                         break;
                     case MainMenuOption.Exit:
                         AnsiConsole.MarkupLine("[green]Goodbye;;[/]");

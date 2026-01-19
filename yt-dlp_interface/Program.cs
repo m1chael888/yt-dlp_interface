@@ -12,6 +12,7 @@ namespace yt_dlp_interface
 
             serviceCollection.AddScoped<IMainMenu, MainMenuView>();
             serviceCollection.AddScoped<IDownloadsController, DownloadsController>();
+            serviceCollection.AddScoped<IDownloadsView, DownloadsView>();
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
