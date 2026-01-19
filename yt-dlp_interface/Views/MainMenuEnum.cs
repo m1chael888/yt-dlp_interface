@@ -1,10 +1,10 @@
 ﻿namespace yt_dlp_interface.Views
 {
-    internal static class MenuEnums
+    public class MainMenuEnum
     {
-        internal enum MenuOption
+        public enum MainMenuOption
         {
-            a,
+            Download,
             Exit
         }
     }

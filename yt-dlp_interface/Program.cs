@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using yt_dlp_interface.Menus;
+using yt_dlp_interface.Controllers;
+using yt_dlp_interface.Views;
 
 namespace yt_dlp_interface
 {
@@ -9,8 +10,8 @@ namespace yt_dlp_interface
         {
             var serviceCollection = new ServiceCollection();
 
-            serviceCollection.AddScoped<IMainMenu, MainMenu>();
-            //serviceCollection.AddScoped<, >();
+            serviceCollection.AddScoped<IMainMenu, MainMenuView>();
+            serviceCollection.AddScoped<IDownloadsController, DownloadsController>();
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
