@@ -73,9 +73,16 @@ namespace yt_dlp_interface.Controllers
             _downloadsService.Download(Dto);
             Console.Clear();
 
-            AnsiConsole.MarkupLine($"[green]{Dto.Url} successfully downloaded =)[/]\n");
-            AnsiConsole.Markup("[grey]Press any key to return to main menu. . .[/]");
-            Console.ReadKey();
+            AnsiConsole.MarkupLine($"[green]{Dto.Url} successfully downloaded =)[/]");
+
+            AnsiConsole.Status()
+               .Spinner(Spinner.Known.Point)
+               .SpinnerStyle("#bebebe")
+               .Start("[#bebebe]Press any key to return to main menu[/]", ctx =>
+               {
+                   Console.ReadKey();
+               });
+
             MainMenu();
         }
 

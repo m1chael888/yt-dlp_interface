@@ -1,5 +1,4 @@
 ﻿using Spectre.Console;
-using yt_dlp_interface.Controllers;
 using yt_dlp_interface.Models;
 
 namespace yt_dlp_interface.Views

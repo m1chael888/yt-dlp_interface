@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using System.Text;
 using yt_dlp_interface.Controllers;
 using yt_dlp_interface.Services;
 using yt_dlp_interface.Views;
@@ -9,6 +10,7 @@ namespace yt_dlp_interface
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             var serviceCollection = new ServiceCollection();
 
             serviceCollection.AddScoped<IMainMenuView, MainMenuView>();

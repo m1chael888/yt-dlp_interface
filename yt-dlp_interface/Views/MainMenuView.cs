@@ -1,5 +1,4 @@
 ﻿using Spectre.Console;
-using yt_dlp_interface.Controllers;
 using static yt_dlp_interface.Views.MainMenuEnum;
 
 namespace yt_dlp_interface.Views

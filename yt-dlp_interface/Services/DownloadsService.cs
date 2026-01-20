@@ -1,6 +1,4 @@
-﻿using Spectre.Console;
-using yt_dlp_interface.Controllers;
-using yt_dlp_interface.Models;
+﻿using yt_dlp_interface.Models;
 
 namespace yt_dlp_interface.Services
 {
@@ -18,7 +16,7 @@ namespace yt_dlp_interface.Services
 
         public void Download(DownloadDto Dto)
         {
-            
+            // 
         }
     }
 }
