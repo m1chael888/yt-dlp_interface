@@ -6,26 +6,18 @@ namespace yt_dlp_interface.Views
 {
     public interface IDownloadsView
     {
-        void GetVideoDetails();
+        DownloadDto GetVideoDetails();
     }
 
     public class DownloadsView : IDownloadsView
     {
-        private readonly IDownloadsController _downloadsController;
-
-        public DownloadsView(IDownloadsController downloadsController)
-        {
-            _downloadsController = downloadsController;
-        }
-
-        public void GetVideoDetails()
+        public DownloadDto GetVideoDetails()
         {
             var download = new DownloadDto();
-            AnsiConsole.MarkupLine("[green]Enter the URL of the video you would like to download in .wav format::[/]");
-            Console.ReadLine();
+            AnsiConsole.MarkupLine("[green]Enter the URL of the video you would like to save in .wav format::[/]\n");
             download.Url = Console.ReadLine();
 
-
+            return (download);
         }
     }
 }
