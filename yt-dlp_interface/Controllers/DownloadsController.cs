@@ -36,7 +36,7 @@ namespace yt_dlp_interface.Controllers
                     CallDownloadsView();
                     break;
                 case MainMenuOption.Exit:
-                    AnsiConsole.MarkupLine("[green]Goodbye;;[/]");
+                    AnsiConsole.MarkupLine("[green]Goodbye;;[/]"); // TODO: maybe press ket to exit? or remove message f it
                     Environment.Exit(0);
                     break;
             }
