@@ -12,6 +12,8 @@ namespace yt_dlp_interface.Views
     {
         public DownloadDto GetVideoDetails()
         {
+            Console.Clear();
+
             var download = new DownloadDto();
             AnsiConsole.MarkupLine("[green]Enter the URL of the video you would like to save in .wav format::[/]\n");
             download.Url = Console.ReadLine();

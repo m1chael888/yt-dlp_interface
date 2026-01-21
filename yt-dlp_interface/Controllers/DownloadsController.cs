@@ -69,21 +69,26 @@ namespace yt_dlp_interface.Controllers
 
         public void CallDownloadService(DownloadDto Dto)
         {
-            AnsiConsole.MarkupLine($"\nDownloading. . .");
-            _downloadsService.Download(Dto);
-            Console.Clear();
+            AnsiConsole.Status()
+               .Spinner(Spinner.Known.Arc)
+               .SpinnerStyle("#bebebe")
+               .Start($"\nDownloading {Dto.Url}", ctx =>
+               {
+                   _downloadsService.Download(Dto);
+               });
 
+            Console.Clear();
             AnsiConsole.MarkupLine($"[green]{Dto.Url} successfully downloaded =)[/]");
 
             AnsiConsole.Status()
                .Spinner(Spinner.Known.Point)
                .SpinnerStyle("#bebebe")
-               .Start("[#bebebe]Press any key to return to main menu[/]", ctx =>
+               .Start("[#bebebe]Press any key to return[/]", ctx =>
                {
                    Console.ReadKey();
                });
-
-            MainMenu();
+            
+            CallDownloadsView();
         }
 
         public void MainMenu()
