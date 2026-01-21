@@ -36,7 +36,6 @@ namespace yt_dlp_interface.Controllers
                     CallDownloadsView();
                     break;
                 case MainMenuOption.Exit:
-                    AnsiConsole.MarkupLine("[green]Goodbye;;[/]"); // TODO: maybe press ket to exit? or remove message f it
                     Environment.Exit(0);
                     break;
             }
@@ -69,16 +68,17 @@ namespace yt_dlp_interface.Controllers
 
         public void CallDownloadService(DownloadDto Dto)
         {
+            string result = "";
             AnsiConsole.Status()
                .Spinner(Spinner.Known.Arc)
                .SpinnerStyle("#bebebe")
                .Start($"\nDownloading {Dto.Url}", ctx =>
                {
-                   _downloadsService.Download(Dto);
+                   result = _downloadsService.Download(Dto);
                });
 
             Console.Clear();
-            AnsiConsole.MarkupLine($"[green]{Dto.Url} successfully downloaded =)[/]");
+            AnsiConsole.MarkupLine(result);
 
             AnsiConsole.Status()
                .Spinner(Spinner.Known.Point)
